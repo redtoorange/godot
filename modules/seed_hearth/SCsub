@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+
+Import("env")
+Import("env_modules")
+
+seed_hearth = env_modules.Clone()
+seed_hearth.add_source_files(env.modules_sources, "*.cpp")
