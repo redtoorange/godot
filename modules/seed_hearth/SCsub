@@ -5,3 +5,5 @@ Import("env_modules")
 
 seed_hearth = env_modules.Clone()
 seed_hearth.add_source_files(env.modules_sources, "*.cpp")
+seed_hearth.add_source_files(env.modules_sources, "src/*.cpp")
+seed_hearth.add_source_files(env.modules_sources, "src/data/*.cpp")
