@@ -1,13 +1,12 @@
 ﻿#include "CardData.h"
 
 void CardData::_notification(int p_what) {
+	if(Engine::get_singleton()->is_editor_hint()) return;
+
+	print_line("Hello, World!");
 }
 
 void CardData::_bind_methods() {
-	ClassDB::bind_method(D_METHOD("get_background_color"), &CardData::get_background_color);
-	ClassDB::bind_method(D_METHOD("set_background_color", "background_color"), &CardData::set_background_color);
-	ADD_PROPERTY(PropertyInfo(Variant::COLOR, "background_color"), "set_background_color", "get_background_color");
-
 	ClassDB::bind_method(D_METHOD("get_card_name"), &CardData::get_card_name);
 	ClassDB::bind_method(D_METHOD("set_card_name", "background_color"), &CardData::set_card_name);
 	ADD_PROPERTY(PropertyInfo(Variant::STRING, "card_name"), "set_card_name", "get_card_name");
@@ -20,12 +19,20 @@ void CardData::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_card_image", "background_color"), &CardData::set_card_image);
 	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "background_image", PROPERTY_HINT_RESOURCE_TYPE, "Texture2D"), "set_card_image", "get_card_image");
 
+	ClassDB::bind_method(D_METHOD("get_background_color"), &CardData::get_background_color);
+	ClassDB::bind_method(D_METHOD("set_background_color", "background_color"), &CardData::set_background_color);
+	ADD_PROPERTY(PropertyInfo(Variant::COLOR, "background_color"), "set_background_color", "get_background_color");
+
 	ClassDB::bind_method(D_METHOD("get_stamina_cost"), &CardData::get_stamina_cost);
 	ClassDB::bind_method(D_METHOD("set_stamina_cost", "background_color"), &CardData::set_stamina_cost);
 	ADD_PROPERTY(PropertyInfo(Variant::INT, "stamina_cost"), "set_stamina_cost", "get_stamina_cost");
 }
 
 CardData::CardData() {
+	staminaCost = 0;
+	cardName = "Test Name";
+	cardDescription = "Test Description";
+	backgroundColor = Color(1, 1, 1, 1);
 }
 
 CardData::~CardData() {
