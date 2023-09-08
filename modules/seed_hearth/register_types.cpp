@@ -3,6 +3,7 @@
 #include "core/object/class_db.h"
 #include "src/TestSprite.h"
 #include "src/data/CardData.h"
+#include "src/card/CardManager.h"
 #include "src/data/DeckData.h"
 
 void initialize_seed_hearth_module(ModuleInitializationLevel p_level) {
@@ -13,6 +14,7 @@ void initialize_seed_hearth_module(ModuleInitializationLevel p_level) {
 	GDREGISTER_CLASS(TestSprite)
 	GDREGISTER_CLASS(CardData)
 	GDREGISTER_CLASS(DeckData)
+	GDREGISTER_CLASS(CardManager)
 }
 
 void uninitialize_seed_hearth_module(ModuleInitializationLevel p_level) {
