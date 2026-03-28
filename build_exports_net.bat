@@ -1,2 +1,2 @@
-call scons platform=windows target=template_debug arch=x86_64 module_mono_enabled=yes fast_unsafe=yes d3d12=yes build_profile="gem_knights_profile.gdbuild" scu_build=yes scu_limit=1024
-call scons platform=windows target=template_release arch=x86_64 module_mono_enabled=yes fast_unsafe=yes d3d12=yes build_profile="gem_knights_profile.gdbuild" scu_build=yes scu_limit=1024 production=yes
+call scons platform=windows accesskit=no angle=no target=template_debug arch=x86_64 module_mono_enabled=yes fast_unsafe=yes d3d12=yes build_profile="gem_knights_profile.gdbuild" scu_build=yes scu_limit=1024
+call scons platform=windows accesskit=no angle=no target=template_release arch=x86_64 module_mono_enabled=yes fast_unsafe=yes d3d12=yes build_profile="gem_knights_profile.gdbuild" scu_build=yes scu_limit=1024 production=yes
